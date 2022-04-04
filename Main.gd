@@ -3,9 +3,11 @@ extends Node2D
 onready var testBtn = $Control/Button
 onready var testPopup = $Control/PopupDialog
 
-onready var air_label = $UI/VBoxContainer/AirLabel
-onready var health_label = $UI/VBoxContainer/HealthLabel
-onready var energy_label = $UI/VBoxContainer/EnergyLabel
+onready var air_label = $UI/Panel/VBoxContainer/AirLabel
+onready var health_label = $UI/Panel/VBoxContainer/HealthLabel
+onready var energy_label = $UI/Panel/VBoxContainer/EnergyLabel
+
+onready var list = $UI/Panel2/ScrollContainer/Elements
 
 var air: int = 50
 var health: int = 50 setget health_set
@@ -39,6 +41,10 @@ func _ready():
 	set_air_text(air)
 	set_health_text(health)
 	set_energy_text(energy)
+	
+	var n = Button.new()
+	n.text = "Wow, I added this button!"
+	
 
 
 
